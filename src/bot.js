@@ -10,28 +10,45 @@ if (!token) {
 const bot = new Bot(token);
 
 bot.command("start", async (ctx) => {
-  const inlineKeyboard = new InlineKeyboard().text("connect", "geust.connect").row().text("website" , URL="https://famoacademy.ir");
-  await ctx.reply(`
-    <b>Hi, Welcome to FamoBot!</b>
-    To start using the bot please connect your acount first:
+  const inlineKeyboard = new InlineKeyboard()
+    .text("🔗 Connect", "guest.connect")
+    .row()
+    .url("🌐 Website", "https://famoacademy.ir");
+
+  await ctx.reply(
+    `
+<b>Hi, Welcome to FamoBot!</b>
+
+To start using the bot please connect your account first:
     `,
     {
-      parse_mode: 'HTML',
-      reply_markup: inlineKeyboard
+      parse_mode: "HTML",
+      reply_markup: inlineKeyboard,
     }
   );
 });
 
-bot.callbackQuery("geust.connect", async (ctx) => {
-  const keyboard = new Keyboard().requestContact("send phone number").resized();
+bot.callbackQuery("guest.connect", async (ctx) => {
   await ctx.answerCallbackQuery();
-  await ctx.editMessageText("To connect your account, send us your phone number using the button below 👇",
-  {
-    reply_markup: keyboard
-  })
-})
+
+  const keyboard = new Keyboard()
+    .requestContact("📱 Send phone number")
+    .resized();
+
+  await ctx.reply(
+    "To connect your account, send us your phone number using the button below 👇",
+    {
+      reply_markup: keyboard,
+    }
+  );
+});
+
 bot.on("message:contact", async (ctx) => {
-  await ctx.reply("checking number ...");
+  const contact = ctx.message.contact;
+
+  console.log(contact);
+
+  await ctx.reply("Checking number...");
 });
 
 bot.on("message:text", async (ctx) => {
