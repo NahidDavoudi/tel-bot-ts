@@ -1,24 +1,31 @@
 {
-  "name": "zeroclaw-lab",
+  "name": "telegram-bot-boilerplate",
   "version": "1.0.0",
-  "description": "",
+  "description": "This repository contains a **Telegram bot boilerplate built with TypeScript**. The goal of the project is to provide a structured starting point for building Telegram bots with clear separation between networking, parsing, routing, handlers, and persistence.",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsx src/bot.ts"
+    "dev": "tsx src/bot.ts",
+    "build": "tsc",
+    "start": "node dist/bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NahidDavoudi/tel-bot-ts.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NahidDavoudi/tel-bot-ts/issues"
+  },
+  "homepage": "https://github.com/NahidDavoudi/tel-bot-ts#readme",
   "dependencies": {
-    "better-sqlite3": "^12.6.2",
-    "dotenv": "^17.3.1"
+    "dotenv": "^18.0.5",
+    "grammy": "^1.46.0"
   },
   "devDependencies": {
-    "@types/better-sqlite3": "^7.6.13",
-    "@types/node": "^25.4.0",
-    "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
+    "@types/node": "^26.6.4",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
   }
 }
