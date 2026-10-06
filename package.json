@@ -4,9 +4,7 @@
   "description": "This repository contains a **Telegram bot boilerplate built with TypeScript**. The goal of the project is to provide a structured starting point for building Telegram bots with clear separation between networking, parsing, routing, handlers, and persistence.",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx src/bot.ts",
-    "build": "tsc",
-    "start": "node dist/bot.js"
+    "start": "node src/bot.js"
   },
   "repository": {
     "type": "git",
@@ -22,10 +20,5 @@
   "dependencies": {
     "dotenv": "^18.0.5",
     "grammy": "^1.46.0"
-  },
-  "devDependencies": {
-    "@types/node": "^26.6.4",
-    "tsx": "^4.23.15",
-    "typescript": "^7.0.2"
   }
 }

@@ -17,6 +17,10 @@ bot.on("message:text", async (ctx) => {
   await ctx.reply(`پیامت دریافت شد: ${ctx.message.text}`);
 });
 
+bot.catch((err) => {
+  console.error("Bot error:", err);
+});
+
 bot.start();
 
 console.log("Famo Bot is running...");
