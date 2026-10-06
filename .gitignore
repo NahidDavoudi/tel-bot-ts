@@ -1,0 +1,28 @@
+# Dependencies
+/node_modules
+/jspm_packages/
+
+# Testing
+/coverage/
+
+# Production
+/build/
+/dist/
+/tmp/
+
+# Environment variables
+.env
+.env.local
+
+# Logs and temporary files
+npm-debug.log*
+*.log
+*.tgz
+
+# IDE files (optional, adjust as needed)
+.vscode/
+.idea/
+
+
+# db
+*.db
